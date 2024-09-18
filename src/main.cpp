@@ -15,29 +15,34 @@ void setup() {
   pinMode(LED3, OUTPUT);
   pinMode(LED4, OUTPUT);
   pinMode(LED5, OUTPUT);
+  
 }
 
+const int lista_med_led[4] = {LED2, LED3, LED4, LED5}; //Sätter alla led lampor i en constant array
+
 void loop() {
-  // put your main code here, to run repeatedly:
-  digitalWrite(LED5, LOW); // Stänger av den sista lampan och sätter på den första
-  digitalWrite(LED2, HIGH); // digital = hög eller låg, hög = lLED:en lyser
-  Serial.println("LED2 is on"); // syns i terminalen, kan användas som felsökning
+  for (int i = 0; i < 4; i++){ //for loop
+
+  if (i == 0){ 
+    digitalWrite(LED5, LOW); //man kan inte ta -1 så den stänger av den sista lampan
+  }
+  else{
+    digitalWrite(lista_med_led[i - 1], LOW); //stänger av den förra lampan
+  }
+
+  digitalWrite(lista_med_led[i], HIGH); //sätter på lampan
+
   delay(1000);
-  digitalWrite(LED2, LOW);
-  digitalWrite(LED3, HIGH);
-  Serial.println("LED3 is on");
-  delay(1000);
-  digitalWrite(LED3, LOW);
-  digitalWrite(LED4, HIGH);
-  Serial.println("LED4 is on");
-  delay(1000);
-  digitalWrite(LED4, LOW);
-  digitalWrite(LED5, HIGH);
-  Serial.println("LED5 is on");
-  delay(1000);
+  
+
+}
+  
+
 }
 
 // put function definitions here:
 int myFunction(int x, int y) {
   return x + y;
 }
+
+
