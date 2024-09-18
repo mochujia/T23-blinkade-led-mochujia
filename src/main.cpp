@@ -9,6 +9,7 @@ int myFunction(int, int);
 #define LED5 5
 
 void setup() {
+  delay(1000);
   // put your setup code here, to run once:
   Serial.begin(115200); // Fixar med uppladdningshastighet
   pinMode(LED2, OUTPUT); // Sätter pin 2 till output
