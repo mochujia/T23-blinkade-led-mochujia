@@ -22,6 +22,22 @@ void setup() {
 const int lista_med_led[4] = {LED2, LED3, LED4, LED5}; //Sätter alla led lampor i en constant array
 
 void loop() {
+  blinkande_led_lamp_funktion();
+  
+  
+
+}
+  
+
+
+
+// put function definitions here:
+int myFunction(int x, int y) {
+  return x + y;
+}
+
+
+void blinkande_led_lamp_funktion() {
   for (int i = 0; i < 4; i++){ //for loop
 
   if (i == 0){ 
@@ -34,16 +50,6 @@ void loop() {
   digitalWrite(lista_med_led[i], HIGH); //sätter på lampan
 
   delay(1000);
-  
 
+ }
 }
-  
-
-}
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
-}
-
-
