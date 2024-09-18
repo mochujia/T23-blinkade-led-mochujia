@@ -2,6 +2,7 @@
 
 // put function declarations here:
 int myFunction(int, int);
+void blinkande_led_lamp_funktion(int antal_gånger_loop_har_körts);
 
 #define LED2 2 // Definierar att pin 2 ska kallas LED
 #define LED3 3
@@ -18,25 +19,31 @@ void setup() {
   pinMode(LED5, OUTPUT);
   
 }
-
+int antal_gånger_loop_har_körts = 0;
 const int lista_med_led[4] = {LED2, LED3, LED4, LED5}; //Sätter alla led lampor i en constant array
 
 
-void blinkande_led_lamp_funktion() {
-  for (int i = 0; i < 4; i++){ //for loop
 
-  if (i == 0){ 
-    digitalWrite(LED5, LOW); //man kan inte ta -1 så den stänger av den sista lampan
+
+void blinkande_led_lamp_funktion(int antal_gånger_loop_har_körts) {
+
+  if (antal_gånger_loop_har_körts == 0){
+    digitalWrite(LED5, LOW);
+
   }
   else{
-    digitalWrite(lista_med_led[i - 1], LOW); //stänger av den förra lampan
-  }
+    digitalWrite(lista_med_led[antal_gånger_loop_har_körts - 1], LOW); //stänger av den förra lampan
 
-  digitalWrite(lista_med_led[i], HIGH); //sätter på lampan
+  }
+  
+  
+
+  digitalWrite(lista_med_led[antal_gånger_loop_har_körts], HIGH); //sätter på lampan
 
   delay(1000);
+  
 
- }
+ 
 }
 
 
@@ -50,7 +57,19 @@ void blinkande_led_lamp_funktion() {
 
 
 void loop() {
-  blinkande_led_lamp_funktion();
+  blinkande_led_lamp_funktion(antal_gånger_loop_har_körts);
+
+  if (antal_gånger_loop_har_körts == 3){
+    antal_gånger_loop_har_körts = 0;
+  }
+
+  else{
+    antal_gånger_loop_har_körts += 1;
+
+  }
+
+  
+  
   
   
 
