@@ -83,7 +83,7 @@ void blinkande_led_lamp_funktion(int antal_ganger_loop_har_korts) {
 
 
 void loop() {
-  blinkande_led_lamp_funktion(antal_ganger_loop_har_korts);
+  blinkande_led_lamp_funktion();
 
   
 
