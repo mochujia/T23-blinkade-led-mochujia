@@ -2,7 +2,7 @@
 
 // put function declarations here:
 int myFunction(int, int);
-void blinkande_led_lamp_funktion(int antal_ganger_loop_har_korts);
+void blinkande_led_lamp_funktion();
 
 #define LED2 2 // Definierar att pin 2 ska kallas LED
 #define LED3 3
@@ -29,7 +29,7 @@ const int lista_med_led[4] = {LED2, LED3, LED4, LED5}; //Sätter alla led lampor
 
 
 
-void blinkande_led_lamp_funktion(int antal_ganger_loop_har_korts) {
+void blinkande_led_lamp_funktion() {
 
   tid_just_nu = millis();
   
