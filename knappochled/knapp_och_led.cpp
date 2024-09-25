@@ -19,15 +19,9 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   if (digitalRead(BUTTON)==LOW){
-    delay(20);
-    if (digitalRead(BUTTON)==LOW){
-      digitalWrite(LED, !digitalRead(LED));
-    }
+    digitalWrite(LED, HIGH);
   }
-  while (digitalRead(BUTTON) == LOW){
-    delay(20);
-  while (digitalRead(BUTTON) == LOW){
-      delay(20);
-  }
+  else{
+    digitalWrite(LED, LOW);
   }
 }
