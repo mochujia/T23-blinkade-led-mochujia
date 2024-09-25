@@ -25,7 +25,7 @@ const int lista_med_led[4] = {LED2, LED3, LED4, LED5}; //Sätter alla led lampor
 
 
 
-void blinkande_led_lamp_funktion() {
+void blinkande_led_lamp_funktion(int antal_ganger_loop_har_korts) {
 
   if (antal_ganger_loop_har_korts == 0){
     digitalWrite(LED5, LOW);
