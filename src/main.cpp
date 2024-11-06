@@ -4,8 +4,8 @@
 
 #define PM 1
 #define LED 2
-unsigned long minDelay = 10;
-unsigned long maxDelay = 1000;
+int minDelay = 10;
+int maxDelay = 1000;
 
 
 
@@ -19,12 +19,12 @@ void setup() {
 }
 
 void loop() {
-  unsigned long sensorValue = analogRead(PM);
-  unsigned long blinkDelay = minDelay + ((maxDelay-minDelay) * sensorValue)/4095;
+  int sensorValue = analogRead(PM);
+  float blinkDelay = minDelay + ((maxDelay-minDelay) * sensorValue)/4095;
   delay(blinkDelay);
   digitalWrite(LED, HIGH);
   Serial.println("Lampan tänds");
-  delay(200);
+  delay(blinkDelay);
   digitalWrite(LED, LOW);
 
 
