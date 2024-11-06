@@ -13,7 +13,7 @@ void setup() {
 }
 
 void loop() {
-  unsigned long sensorValue = analogRead(A0);
+  unsigned long sensorValue = analogRead(A0) / 3;
   
   delay(sensorValue);
   digitalWrite(LED, HIGH);
