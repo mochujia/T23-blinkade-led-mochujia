@@ -52,9 +52,11 @@ BUTTON_STATE buttonRead() {
     return DOWN;
   }
 
-  else {
+  else{
     return UP;
   }
+  
+  
 
 
 
